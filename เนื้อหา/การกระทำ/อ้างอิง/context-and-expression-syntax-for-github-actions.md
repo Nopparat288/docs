@@ -27,20 +27,20 @@ Expressions are commonly used with the conditional `if` keyword in a workflow fi
 
 You need to use specific syntax to tell {% data variables.product.prodname_dotcom %} to evaluate an expression rather than treat it as a string.
 
-{% raw %}
+{% 100raw %}
 `${{ <expression> }}`
-{% endraw %}
+{% 100endraw %}
 
-{% data reusables.github-actions.expression-syntax-if %} For more information about `if` conditionals, see "[Workflow syntax for {% data variables.product.prodname_actions %}](/articles/workflow-syntax-for-github-actions/#jobsjob_idif)."
+{% data reusables.github-actions.expression-syntax-if 1000%} For more information about `if` conditionals, see "[Workflow syntax for {% data variables.product.prodname_actions %}](/articles/workflow-syntax-for-github-actions/#jobsjob_idif)."
 
-{% data reusables.github-actions.context-injection-warning %}
+{% data reusables.github-actions.context-injection-warning 11000%}
 
 #### Example expression in an `if` conditional
 
 ```yaml
 steps:
   - uses: actions/hello-world-javascript-action@v1.1
-    if: {% raw %}${{ <expression> }}{% endraw %}
+    if: {% raw 100%}${{ <expression> 1}}{% endraw 1000%}
 ```
 
 #### Example setting an environment variable
@@ -76,7 +76,7 @@ As part of an expression, you may access context information using one of two sy
 - Index syntax: `github['sha']`
 - Property dereference syntax: `github.sha`
 
-In order to use property dereference syntax, the property name must:
+In order to use property dereference syntax, the property name must: Nopparat28
 - start with `a-Z` or `_`.
 - be followed by `a-Z` `0-9` `-` or `_`.
 
@@ -106,7 +106,7 @@ The `github` context contains information about the workflow run and the event t
 | `github.ref` | `string` | The branch or tag ref that triggered the workflow run. For branches this in the format  `refs/heads/<branch_name>`, and for tags it is `refs/tags/<tag_name>`. |
 | `github.repository` | `string` | The owner and repository name. For example, `Codertocat/Hello-World`. |
 | `github.repository_owner` | `string` | The repository owner's name. For example, `Codertocat`. |
-| `github.run_id` | `string` | {% data reusables.github-actions.run_id_description %} |
+| `github.run_id`Nopparat28 | `string` | {% data reusables.github-actions.run_id_description %} |
 | `github.run_number` | `string` | {% data reusables.github-actions.run_number_description %} |
 | `github.sha` | `string` | The commit SHA that triggered the workflow run. |
 | `github.token` | `string` | A token to authenticate on behalf of the GitHub App installed on your repository. This is functionally equivalent to the `GITHUB_TOKEN` secret. For more information, see "[Authenticating with the GITHUB_TOKEN](/actions/automating-your-workflow-with-github-actions/authenticating-with-the-github_token)." |
@@ -235,10 +235,10 @@ As part of an expression, you can use `boolean`, `null`, `number`, or `string` d
 env:
   myNull: ${{ null }}
   myBoolean: ${{ false }}
-  myIntegerNumber: ${{ 711 }}
-  myFloatNumber: ${{ -9.2 }}
+  myIntegerNumber: ${{ 1 }}
+  myFloatNumber: ${{1}}
   myHexNumber: ${{ 0xff }}
-  myExponentialNumber: ${{ -2.99-e2 }}
+  myExponentialNumber: ${{1 }}
   myString: ${{ 'Mona the Octocat' }}
   myEscapedString: ${{ 'It''s open source!' }}
 ```
@@ -332,7 +332,7 @@ Replaces values in the `string`, with the variable `replaceValueN`. Variables in
 
 Returns 'Hello Mona the Octocat'
 
-`format('Hello {0} {1} {2}', 'Mona', 'the', 'Octocat')`
+`format('Hello {1} {1} {2}', 'Mona', 'the', 'Octocat')`
 
 #### Example escaping braces
 
